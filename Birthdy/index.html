@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#17051d" />
+    <title>A birthday surprise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="fireworks" aria-hidden="true"></canvas>
+    <div id="hearts" aria-hidden="true"></div>
+    <main id="app" aria-live="polite">
+      <section class="screen is-active opening" data-screen="opening">
+        <span class="eyebrow">A little surprise, made with love</span>
+        <div class="sparkles" aria-hidden="true">✦　⋆　✧　⋆　✦</div>
+        <h1>For someone<br /><em>very special</em></h1>
+        <p id="opening-copy">A birthday story is waiting for you.</p>
+        <button class="primary-button" id="start-button">Open your surprise <span>→</span></button>
+        <p class="hint">Tap to start the music and the magic</p>
+      </section>
+
+      <section class="screen countdown-screen" data-screen="countdown">
+        <button class="sound-button" id="sound-button" aria-label="Toggle music">♫</button>
+        <span class="eyebrow">Enjoy Every Moment of your Day.</span>
+        <p class="clock-label" id="clock-label">Almost midnight…</p>
+        <div class="countdown" id="countdown" aria-label="Birthday countdown">
+          <div><strong id="days">00</strong><span>days</span></div>
+          <i>:</i><div><strong id="hours">00</strong><span>hours</span></div>
+          <i>:</i><div><strong id="minutes">00</strong><span>min</span></div>
+          <i>:</i><div><strong id="seconds">00</strong><span>sec</span></div>
+        </div>
+        <p id="countdown-note">Most Important time for me in the entire World for me.</p>
+        <button class="text-button" id="preview-button">Preview the midnight moment ✦</button>
+      </section>
+
+      <section class="screen midnight-screen" data-screen="midnight">
+        <span class="time-flip">11:59 <b>PM</b></span>
+        <div class="midnight-copy">
+          <p>One last minute of being</p>
+          <h2 id="age-before">21</h2>
+          <p>Then, at the stroke of midnight…</p>
+        </div>
+        <button class="primary-button" id="midnight-button">Turn the clock <span>→</span></button>
+      </section>
+
+      <section class="screen cake-screen" data-screen="cake">
+        <span class="eyebrow">It is finally your moment</span>
+        <h2>Happy Birthday,<br /><em id="birthday-name">My Love/em></h2>
+        <p id="birthday-age">Hello, 22.</p>
+        <div class="cake-wrap" aria-label="A birthday cake with candles">
+          <div class="candle c1"><span></span></div><div class="candle c2"><span></span></div><div class="candle c3"><span></span></div>
+          <div class="cake-top"></div><div class="cake-middle"></div><div class="cake-bottom"></div><div class="plate"></div>
+        </div>
+        <button class="primary-button" id="wish-button">Make a wish <span>♡</span></button>
+      </section>
+
+      <section class="screen memories-screen" data-screen="memories">
+        <span class="eyebrow">A few favorite memories</span>
+        <h2>Us, in little<br /><em>beautiful moments</em></h2>
+        <div class="memory-grid" id="memory-grid"></div>
+        <button class="primary-button" data-next="message">Read my note <span>→</span></button>
+      </section>
+
+      <section class="screen message-screen" data-screen="message">
+        <span class="eyebrow">From my heart to yours</span>
+        <div class="letter-mark">“</div>
+        <p class="message" id="birthday-message"></p>
+        <p class="signature" id="signature"></p>
+        <button class="primary-button" data-next="final">One more surprise <span>→</span></button>
+      </section>
+
+      <section class="screen final-screen" data-screen="final">
+        <div class="final-stars" aria-hidden="true">✦　✧　⋆　✦</div>
+        <span class="eyebrow">Today is all about you</span>
+        <h2>Happy <span id="final-age">22nd</span><br />Birthday, <em id="final-name">Shruti</em> ♡</h2>
+        <p>May this year give you every reason to smile.</p>
+        <button class="primary-button" id="replay-button">Watch it again <span>↻</span></button>
+      </section>
+    </main>
+    <audio id="background-music" loop preload="none"></audio>
+    <script src="script.js"></script>
+  </body>
+</html>
